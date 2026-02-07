@@ -1,0 +1,53 @@
+{
+  "info": {
+    "_postman_id": "442107fd-8644-4d8d-9f30-e7335e4355c4",
+    "name": "My_First_API_Automation",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "9511410"
+  },
+  "item": [
+    {
+      "name": "https://jsonplaceholder.typicode.com/posts/1",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "pm.test(\"Check if ID is 1\", function () {\r",
+              "    var jsonData = pm.response.json(); // הופך את התשובה לאובייקט שאפשר לקרוא\r",
+              "    pm.expect(jsonData.id).to.eql(1); // בודק שה-ID שחזר הוא אכן 1\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
